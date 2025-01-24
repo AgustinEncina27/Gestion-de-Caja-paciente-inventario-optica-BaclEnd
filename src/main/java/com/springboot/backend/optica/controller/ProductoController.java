@@ -183,6 +183,7 @@ public class ProductoController {
 			currentProducto.setGenero(producto.getGenero());
 			currentProducto.setMaterial(producto.getMaterial());
 			currentProducto.setCategorias(producto.getCategorias());
+			currentProducto.setProveedores(producto.getProveedores());
 			currentProducto.setCreadoEn(producto.getCreadoEn());
 			currentProducto.setUltimaActualizacion(producto.getUltimaActualizacion());
 			

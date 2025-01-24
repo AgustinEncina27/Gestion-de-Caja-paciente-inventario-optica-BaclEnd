@@ -54,6 +54,15 @@ public class Producto implements Serializable {
         inverseJoinColumns = @JoinColumn(name = "categoria_id")
     )
     private List<Categoria> categorias;
+    
+    @JsonIgnoreProperties(value = {"productos", "hibernateLazyInitializer", "handler"}, allowSetters = true)
+    @ManyToMany(fetch = FetchType.LAZY)
+    @JoinTable(
+        name = "producto_proveedor",
+        joinColumns = @JoinColumn(name = "producto_id"),
+        inverseJoinColumns = @JoinColumn(name = "proveedor_id")
+    )
+    private List<Proveedor> proveedores;
 
     @Column(nullable = false, name = "creado_en")
     private LocalDate creadoEn;
